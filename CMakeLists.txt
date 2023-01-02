@@ -20,8 +20,12 @@ find_package(ament_cmake REQUIRED)
 find_package(builtin_interfaces REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
-rosidil_generate_interfaces(${PROJECT_NAME}
+set(msg_files
   "msg/PID.msg"
+)
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+  ${msg_files}
   DEPENDENCIES builtin_interfaces
 )
 # uncomment the following section in order to fill in
